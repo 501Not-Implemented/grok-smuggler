@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Grok Smuggler for X.com
 // @namespace   https://github.com/501Not-Implemented/grok-smuggler
-// @version     1.4.0
+// @version     1.4.1
 // @description Export your Grok AI conversations as JSON with embedded images. Single or bulk export. Pair with the offline viewer at https://github.com/501Not-Implemented/grok-smuggler
 // @license     MIT
 // @author      501-NotImplemented
@@ -17,7 +17,7 @@
 (function () {
   "use strict";
 
-  const EXPORTER_VERSION = "x-grok-exporter-1.4.0";
+  const EXPORTER_VERSION = "x-grok-exporter-1.4.1";
   const BEARER = "AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA";
   const HISTORY_HASH = "9Hyh5D4-WXLnExZkONSkZg";
   const CONV_HASH_FALLBACK = "nqTys1mtEjrk-hVbkVjZZA";
