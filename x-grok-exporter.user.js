@@ -7,7 +7,7 @@
 // @author      501-NotImplemented
 // @homepageURL https://github.com/501Not-Implemented/grok-smuggler
 // @supportURL  https://github.com/501Not-Implemented/grok-smuggler/issues
-// @match       https://x.com/i/grok*
+// @match       https://x.com/*
 // @run-at      document-idle
 // @connect     x.com
 // @connect     ton.x.com
@@ -530,5 +530,26 @@
     document.body.appendChild(allBtn);
   }
 
-  injectButtons();
+  function removeButtons() {
+    document.getElementById("x-grok-export-btn")?.remove();
+    document.getElementById("x-grok-export-all-btn")?.remove();
+  }
+
+  function onRouteChange() {
+    if (location.pathname.startsWith("/i/grok")) {
+      injectButtons();
+    } else {
+      removeButtons();
+    }
+  }
+
+  onRouteChange();
+
+  let lastPath = location.pathname;
+  new MutationObserver(() => {
+    if (location.pathname !== lastPath) {
+      lastPath = location.pathname;
+      onRouteChange();
+    }
+  }).observe(document.body, { childList: true, subtree: true });
 })();
